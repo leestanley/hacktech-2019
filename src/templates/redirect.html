@@ -17,8 +17,8 @@
             <header id="header">
                 <div class="inner">
                     <a href="#" class="image avatar"><img src="static/images/avatar.png" alt="" /></a>
-                    <h1><strong>Marketpeel</strong>, an advanced<br />
-                    portfolio manager<br />
+                    <h1><strong>MarketPeel</strong>, an advanced<br />
+                    portfolio (anti)manager<br />
                     created at <a href="https://github.com/leestanley/hacktech-2019">Hacktech 2019</a>.</h1>
                 </div>
                 <form method="POST" action="/redirect">
@@ -38,14 +38,38 @@
                 <!-- One -->
                     <section id="one">
                         <header class="major">
-                            <h2>Calculate your stock worth<br />
-                            in terms of potatoes.</h2>
+                            <h2>{{ ticker }} | Value of Holdings: ${{price}}</h2>
                         </header>
-                        <p>The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum. In many contexts, potato refers to the edible tuber, but it can also refer to the plant itself. Common or slang terms include tater, tattie and spud. Potatoes were introduced to Europe in the second half of the 16th century by the Spanish. Today they are a staple food in many parts of the world and an integral part of much of the world's food supply. As of 2014, potatoes were the world's fourth-largest food crop after maize (corn), wheat, and rice.</p>
+                        <p>The current price of a potato in <strong>Los Angeles</strong> is <strong>{{ potatoprice }}</strong>. This means your holdings in <strong>{{ticker}}</strong> are worth <strong>{{ratio}}</strong> potatoes.<strong></strong></p>
                         <ul class="actions">
                             <li><a href="#" class="button">Learn More</a></li>
                         </ul>
                     </section>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="tradingview_4dfeb"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                  new TradingView.widget(
+                  {
+                  "width": 800,
+                  "height": 400,
+                  "symbol": "NASDAQ:{{ ticker }}",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "Light",
+                  "style": "1",
+                  "locale": "en",
+                  "toolbar_bg": "#f1f3f6",
+                  "enable_publishing": false,
+                  "allow_symbol_change": true,
+                  "container_id": "tradingview_4dfeb"
+                }
+                  );
+                  </script>
+                </div>
+    <!-- TradingView Widget END -->
             </div>
 
         <!-- Scripts -->
@@ -54,7 +78,7 @@
             <script src="assets/js/browser.min.js"></script>
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script> -->
-
+            <script src="assets/js/main.js"></script>
+ -->
     </body>
 </html>

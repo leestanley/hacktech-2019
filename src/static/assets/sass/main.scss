@@ -279,7 +279,10 @@ $size-header-pad: 4em;
 	  background: #FFFFFF;
 	  max-width: 400px;
 	  margin: 0 auto 0 px;
-	  padding: 45px;
+	  padding-top: 45px;
+	  padding-left: 45px;
+	  padding-right: 45px;
+	  padding-bottom: 30px;
 	  text-align: center;
 	  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	}
@@ -301,7 +304,7 @@ $size-header-pad: 4em;
 	  background: #4f4f4f;
 	  width: 100%;
 	  border: 0;
-	  padding: 15px;
+	  padding: 0px;
 	  color: #FFFFFF;
 	  font-size: 14px;
 	  -webkit-transition: all 0.3 ease;
@@ -949,7 +952,7 @@ $size-header-pad: 4em;
 		@include vendor('justify-content', 'space-between');
 		background-color:		_palette(accent2, bg);
 		background-attachment:	scroll,								scroll;
-		background-image:		url('images/overlay.png'),			url('../../images/bg.jpg');
+		background-image:		url(overlay.png),			url(bg.jpg);
 		background-position:	top left,							top left;
 		background-repeat:		repeat,								no-repeat;
 		background-size:		auto,								150%;
@@ -988,8 +991,8 @@ $size-header-pad: 4em;
 		}
 
 		.image.avatar {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
-			width: 6.25em;
+			margin: 0 0 (_size(element-margin) * 1.5) 0;
+			width: 23.25em;
 		}
 	}
 

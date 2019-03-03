@@ -5,6 +5,8 @@ import requests
 
 base_url_1 = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol='
 base_url_2 = '&interval=1min&apikey=RNQUH4LF70UBW4ZM'
+
+
 def get_ticker_price(ticker):
     url = base_url_1 + ticker + base_url_2
     req = requests.request('GET', url)
@@ -17,4 +19,5 @@ def get_ticker_price(ticker):
     else:
         print("Get request unsuccessful")
 
-get_ticker_price("FB")
+
+print(get_ticker_price("FB"))

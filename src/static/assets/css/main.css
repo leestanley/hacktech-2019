@@ -207,7 +207,7 @@ pre {
   background: #FFFFFF;
   max-width: 400px;
   margin: 0 auto 0 px;
-  padding: 45px;
+  padding: 40px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
 
@@ -1484,7 +1484,7 @@ input[type="button"],
   justify-content: space-between;
   background-color: #1f1815;
   background-attachment: scroll,								scroll;
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+  background-image: url(overlay.png), url(bg.jpg);
   background-position: top left,							top left;
   background-repeat: repeat,								no-repeat;
   background-size: auto,								150%;
@@ -1912,5 +1912,3 @@ body.is-touch .poptrox-popup .closer {
     line-height: 2.25em;
     margin-left: 0;
     padding-left: 0; } }
-
-/*# sourceMappingURL=main.css.map */
