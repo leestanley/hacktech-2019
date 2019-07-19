@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'DontTellAnyone'
 
 base_url_1 = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol='
-base_url_2 = '&interval=1min&apikey=RNQUH4LF70UBW4ZM'
+base_url_2 = '&interval=1min&apikey=CF77SW8EH662BQKK'
 
 
 class InputForm(Form):
@@ -41,7 +41,7 @@ def get_ticker_price(ticker):
         print("Get request unsuccessful")
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     form = InputForm()
     if form.validate_on_submit():
@@ -49,7 +49,7 @@ def index():
     return render_template('index.html', form=form)
 
 
-@app.route('/redirect', methods=['GET', 'POST'])
+@app.route('/redirect', methods=['POST'])
 def redirect():
     form = InputForm()
     ticker = str(request.form['ticker'].upper())
@@ -62,8 +62,9 @@ def redirect():
     ratio = price / potatopricefloat
     price = int(price)
     ratio = int(ratio)
-    return render_template('redirect.html', ratio=ratio, potatoprice=potatoprice, price=price, ticker=ticker, tickercount=tickercount, form=form)
+    bigpotato = int(ratio) * ("🥔")
+    return render_template('redirect.html', bigpotato=bigpotato, ratio=ratio, potatoprice=potatoprice, price=price, ticker=ticker, tickercount=tickercount, form=form)
 
 
 if __name__ == "__main__":
-    app.run(port=8075, debug=True)
+    app.run(port=8063, debug=True)
